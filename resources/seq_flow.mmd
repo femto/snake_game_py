@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    participant S as Snake
+    participant F as Food
+    participant U as UI
+    participant So as Sounds
+    M->>G: start game
+    loop Game Loop
+        G->>S: move()
+        alt Collision Detected
+            G->>So: play_collision_sound()
+            G->>M: end game
+        else Food Eaten
+            G->>So: play_eat_sound()
+            G->>S: grow()
+            G->>F: generate()
+            G->>U: display_score(score)
+        end
+        G->>U: render()
+        alt Game Paused
+            G->>U: display_pause_message()
+            G->>G: pause_or_resume()
+        end
+    end

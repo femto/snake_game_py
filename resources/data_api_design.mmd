@@ -1,0 +1,46 @@
+classDiagram
+    class Game{
+        +int score
+        +bool is_paused
+        +Snake snake
+        +Food food
+        +UI ui
+        +Sounds sounds
+        +start()
+        +pause_or_resume()
+        +update()
+        +render()
+    }
+    class Snake{
+        +list segments
+        +Direction direction
+        +move()
+        +grow()
+        +check_collision()
+    }
+    class Food{
+        +Point position
+        +generate()
+    }
+    class UI{
+        +display_score(int)
+        +display_pause_message()
+    }
+    class Sounds{
+        +play_eat_sound()
+        +play_collision_sound()
+    }
+    class Point{
+        +int x
+        +int y
+    }
+    enum Direction{
+        UP
+        DOWN
+        LEFT
+        RIGHT
+    }
+    Game "1" -- "1" Snake: controls
+    Game "1" -- "1" Food: has
+    Game "1" -- "1" UI: displays
+    Game "1" -- "1" Sounds: plays

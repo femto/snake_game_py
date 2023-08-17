@@ -16,6 +16,11 @@ class Food:
             if potential_position not in self.snake_segments:
                 self.position = potential_position
                 break
+    
+    def __init__(self, snake_segments):
+        self.position = Point(0, 0)
+        self.snake_segments = snake_segments
+        self.generate()
     def __init__(self, snake_segments):
         self.position = Point(0, 0)
         self.snake_segments = snake_segments

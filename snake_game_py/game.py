@@ -9,10 +9,12 @@ from snake_game_py.ui import UI
 from snake_game_py.sounds import Sounds
 from snake_game_py.config import SCREEN_WIDTH, SCREEN_HEIGHT
 
-# Initializing pygame's functionalities
-pygame.init()
-
-# Removed the Food class definition as it is redundant
+class Game:
+    def __init__(self):
+        # Setting up the display
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        pygame.display.set_caption("Snake Game")
+        self.initialize_game_state()
 
     def initialize_game_state(self):
         self.score = 0
@@ -82,5 +84,6 @@ pygame.init()
         self.food.generate()
 
 if __name__ == "__main__":
+    pygame.init()
     game = Game()
     game.start()

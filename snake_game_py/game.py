@@ -14,7 +14,7 @@ class Game:
         # Setting up the display
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Snake Game")
-        self.ui = UI()
+        self.ui = UI(self.screen)
         self.sounds = Sounds()
         self.initialize_game_state()
 

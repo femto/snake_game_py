@@ -7,8 +7,8 @@ from snake_game_py.snake import Point  # Import Point from snake.py to avoid red
 class Food:
     class Food:
         def __init__(self, snake_segments):
-            self.position = Point(0, 0)
             self.snake_segments = snake_segments
+            self.position = Point(0, 0)
             self.generate()
     
         def generate(self):

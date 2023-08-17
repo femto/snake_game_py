@@ -4,8 +4,8 @@ from typing import Optional
 
 class Sounds:
     def __init__(self, 
-                 eat_sound_file: Optional[str] = "sounds/eat.wav", 
-                 collision_sound_file: Optional[str] = "sounds/collision.wav"):
+                 eat_sound_file: Optional[str] = "sounds/eating.mp3",
+                 collision_sound_file: Optional[str] = "sounds/collision.mp3"):
         """
         Initialize the Sounds class with the paths to the sound files.
         

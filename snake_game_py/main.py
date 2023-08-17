@@ -19,7 +19,7 @@ class Game:
         self.score = 0
         self.is_paused = False
         self.snake = Snake()
-        self.food = Food()
+        self.food = Food(self.snake.segments)
         self.ui = UI(self.screen)
         self.sounds = Sounds()
 

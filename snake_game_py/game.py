@@ -22,6 +22,7 @@ class Game:
         self.score = 0
         self.is_paused = False
         self.snake = Snake()
+        self.enemy_snake = EnemySnake()
         self.food = Food(self.snake.segments)
 
     def start(self):

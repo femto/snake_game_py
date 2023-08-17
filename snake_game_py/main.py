@@ -2,7 +2,7 @@
 import sys
 sys.path.append("..")
 import pygame
-from snake_game_py.snake import Snake
+from snake_game_py.game import Game
 from snake_game_py.food import Food
 from snake_game_py.ui import UI
 from snake_game_py.sounds import Sounds
@@ -19,7 +19,7 @@ class Game:
         self.score = 0
         self.is_paused = False
         self.snake = Snake()
-        self.food = Food()
+        self.food = Food(self.snake.segments)
         self.ui = UI(self.screen)
         self.sounds = Sounds()
 

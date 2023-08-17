@@ -9,27 +9,18 @@ from snake_game_py.ui import UI
 from snake_game_py.sounds import Sounds
 from snake_game_py.config import SCREEN_WIDTH, SCREEN_HEIGHT
 
-# Initializing pygame's functionalities
-pygame.init()
-
 class Game:
     def __init__(self):
         # Setting up the display
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Snake Game")
-
-        # Initialize game state
         self.initialize_game_state()
-        
-        # Game components
-        self.ui = UI(self.screen)
-        self.sounds = Sounds()
 
     def initialize_game_state(self):
         self.score = 0
         self.is_paused = False
         self.snake = Snake()
-        self.food = Food()
+        self.food = Food(self.snake.segments)
 
     def start(self):
         # Main game loop
@@ -93,5 +84,6 @@ class Game:
         self.food.generate()
 
 if __name__ == "__main__":
+    pygame.init()
     game = Game()
     game.start()

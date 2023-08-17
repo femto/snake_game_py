@@ -2,7 +2,7 @@
 import sys
 sys.path.append("..")
 import pygame
-from snake_game_py.snake import Snake
+from snake_game_py.game import Game
 from snake_game_py.food import Food
 from snake_game_py.ui import UI
 from snake_game_py.sounds import Sounds

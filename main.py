@@ -75,7 +75,7 @@ class Game:
         self.snake = Snake()
         self.food.generate()
 
-#aaa
+#aaabbb
 if __name__ == "__main__":
     game = Game()
     game.start()

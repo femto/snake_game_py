@@ -3,7 +3,7 @@ game.py: Contains the core game loop and main game logic.
 """
 
 import pygame
-from snake_game_py.snake import Snake
+from snake_game_py.snake import Snake, EnemySnake
 from snake_game_py.food import Food
 from snake_game_py.ui import UI
 from snake_game_py.sounds import Sounds

@@ -31,6 +31,10 @@ class Game:
         self.snake = Snake()
         self.food = Food()
 
+    def calculate_fps(self):
+        # Increase the speed by 1 FPS for every 5 points scored
+        return 10 + (self.score // 5)
+
     def start(self):
         # Main game loop
         clock = pygame.time.Clock()
@@ -49,7 +53,7 @@ class Game:
                 self.render()
 
             # Keeping the game at a stable speed
-            clock.tick(10)
+            clock.tick(self.calculate_fps())
 
     def handle_key_event(self, event):
         # Respond to arrow key events

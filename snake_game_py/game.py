@@ -24,6 +24,7 @@ class Game:
         # Game components
         self.ui = UI(self.screen)
         self.sounds = Sounds()
+        self.food = Food(self.snake.segments)
 
     def initialize_game_state(self):
         self.score = 0

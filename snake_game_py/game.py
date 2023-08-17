@@ -12,9 +12,10 @@ from snake_game_py.config import SCREEN_WIDTH, SCREEN_HEIGHT
 # Initializing pygame's functionalities
 pygame.init()
 
-class Game:
-    def __init__(self):
-        # Setting up the display
+class Food:
+    def __init__(self, snake_segments):
+        self.snake_segments = snake_segments
+        # Initialization code here
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Snake Game")
 

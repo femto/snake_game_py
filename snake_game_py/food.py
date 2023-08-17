@@ -5,10 +5,7 @@ from snake_game_py.config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT
 from snake_game_py.snake import Point  # Import Point from snake.py to avoid redundancy
 
 class Food:
-    def __init__(self, snake_segments):
-        self.position = Point(0, 0)
-        self.snake_segments = snake_segments
-        self.generate()
+
 
     def generate(self):
         """Generate food at a random position on the screen, ensuring it's not on the snake."""
@@ -19,6 +16,10 @@ class Food:
             if potential_position not in self.snake_segments:
                 self.position = potential_position
                 break
+    def __init__(self, snake_segments):
+        self.position = Point(0, 0)
+        self.snake_segments = snake_segments
+        self.generate()
 
     def draw(self, screen):
         """Draw the food on the screen."""

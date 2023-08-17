@@ -62,13 +62,15 @@ class Game:
             self.snake.grow()
             self.food.generate()
             self.ui.display_score(self.score)
+    
+    def reset_game(self):
+        self.score = 0
+        self.snake = Snake()
+        self.food.generate()
 
     def render(self):
         self.screen.fill((255, 255, 255))
         self.snake.draw(self.screen)
-        from snake_game_py.game import Game
-        
-        if __name__ == "__main__":
-            game = Game()
-            game.start()
-    game.start()
+        self.food.draw(self.screen)
+        self.ui.display_score(self.score)
+        pygame.display.flip()

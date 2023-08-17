@@ -30,7 +30,7 @@ class Snake:
         self.direction = Direction.RIGHT
 
 class EnemySnake(Snake):
-    def move(self, player_snake, food):
+    def autonomous_move(self, player_snake, food):
         # Simple logic: If enemy snake's head is closer to the left of the food, move right, else move left.
         # This is a basic logic and can be enhanced further for more intelligent movement.
         if self.segments[0].x < food.position.x:
@@ -38,7 +38,7 @@ class EnemySnake(Snake):
         else:
             self.direction = Direction.LEFT
 
-        super().move()
+        super().autonomous_move()
 
     def check_collision_with_player(self, player_snake) -> bool:
         # Check if enemy snake's head collides with any segment of the player's snake

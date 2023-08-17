@@ -75,3 +75,16 @@ class Snake:
         for segment in self.segments:
             pygame.draw.rect(screen, (0, 255, 0), 
                              (segment.x * BLOCK_SIZE, segment.y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
+    
+    class EnemySnake(Snake):
+    def move(self):
+        import random
+        directions = [Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT]
+        self.direction = random.choice(directions)
+        
+        super().move()
+    
+    def draw(self, screen):
+        for segment in self.segments:
+            pygame.draw.rect(screen, (255, 0, 0), 
+                             (segment.x * BLOCK_SIZE, segment.y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))

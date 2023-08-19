@@ -5,39 +5,39 @@ from snake_game_py.food import Food
 
 def test_snake_initialization():
     snake = Snake()
-    assert len(snake.segments) == 1
-    assert snake.direction == Direction.RIGHT
+    assert len(snake.segments) == 1, "Initial snake length should be 1"
+    assert snake.direction == Direction.RIGHT, "Initial snake direction should be RIGHT"
 
 def test_snake_move():
     snake = Snake()
     initial_position = snake.segments[0]
     snake.move()
-    assert snake.segments[0] == Point(initial_position.x + 1, initial_position.y)
+    assert snake.segments[0] == Point(initial_position.x + 1, initial_position.y), "Snake should move to the right by 1 unit"
 
 def test_snake_grow():
     snake = Snake()
     initial_length = len(snake.segments)
     snake.grow()
-    assert len(snake.segments) == initial_length + 1
+    assert len(snake.segments) == initial_length + 1, "Snake length should increase by 1 after grow operation"
 
 def test_snake_collision_with_self():
     snake = Snake()
     snake.segments = [Point(5, 5), Point(6, 5), Point(7, 5)]
     snake.direction = Direction.LEFT
     snake.move()
-    assert snake.check_collision()
+    assert snake.check_collision(), "Snake should collide with itself"
 
 def test_snake_collision_with_boundary():
     snake = Snake()
     snake.segments = [Point(0, 0)]
     snake.direction = Direction.UP
     snake.move()
-    assert snake.check_collision()
+    assert snake.check_collision(), "Snake should collide with the boundary"
 
 def test_food_generate_not_on_snake():
     snake_segments = [Point(5, 5), Point(6, 5), Point(7, 5)]
     food = Food(snake_segments)
-    assert food.position not in snake_segments
+    assert food.position not in snake_segments, "Food should not be generated on the snake"
 
 @pytest.mark.parametrize(
     "current_direction, new_direction, expected_result",

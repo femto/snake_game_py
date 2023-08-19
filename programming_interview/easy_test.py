@@ -1,5 +1,5 @@
 import pytest
-from solution import reverse_string
+from programming_interview.solution import reverse_string
 
 @pytest.mark.parametrize(
     "input_string, expected_output",

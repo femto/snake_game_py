@@ -1,5 +1,5 @@
 import pytest
-from solution import longest_substring_length
+from programming_interview.solution import longest_substring_length
 
 @pytest.mark.parametrize(
     "input_string, expected_output",

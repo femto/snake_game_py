@@ -14,5 +14,5 @@ RED: tuple[int, int, int] = (255, 0, 0)
 BLACK: tuple[int, int, int] = (0, 0, 0)
 
 # Sound files paths
-EAT_SOUND_PATH: str = "sounds/eat.wav"
-COLLISION_SOUND_PATH: str = "sounds/collision.wav"
+EAT_SOUND_PATH: str = "snake_game_py/sounds/eat.wav"
+COLLISION_SOUND_PATH: str = "snake_game_py/sounds/collision.wav"

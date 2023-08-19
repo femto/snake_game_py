@@ -1,8 +1,5 @@
 """main.py: Main entry point for the Snake game using pygame."""
-import sys
-
 import os
-import sys
 
 import pygame
 
@@ -18,6 +15,7 @@ if parent_dir not in sys.path:
 
 from snake_game_py.game import Game
 if __name__ == "__main__":
+    # Initialize pygame and start the main game loop
     pygame.init()
     game = Game()
     game.start()

@@ -19,4 +19,4 @@ Explanation: The answer is "b", with the length of 1.
 ```
 Input: "pwwkew"
 Output: 3
-Explanation: The answer is "pwwkew", with the length of 3.
+Explanation: The answer is "wke", with the length of 3.

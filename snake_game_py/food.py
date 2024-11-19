@@ -20,8 +20,10 @@ class Food:
                 self.position = potential_position
                 break
 
+
     def draw(self, screen):
         """Draw the food on the screen."""
         pygame.draw.rect(screen, (255, 0, 0),
                          #this is it
                          (self.position.x * BLOCK_SIZE, self.position.y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
+

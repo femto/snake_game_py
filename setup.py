@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+
 setup(
     name='snake_game_py',
     version='0.1.0',

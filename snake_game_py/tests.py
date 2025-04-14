@@ -25,6 +25,7 @@ def test_snake_collision_with_self():
     snake.segments = [Point(5, 5), Point(6, 5), Point(7, 5)]
     snake.direction = Direction.LEFT
     snake.move()
+    snake.segments.append(Point(7, 5))
     assert snake.check_collision()
 
 def test_snake_collision_with_boundary():
